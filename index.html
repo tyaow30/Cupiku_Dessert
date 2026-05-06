@@ -1,120 +1,365 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cupiku Dessert</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cupiku — Your Favorite Dessert Cup</title>
+  <meta name="description" content="Dessert cup kekinian, bikin hari makin manis 💚" />
 
-    <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!--
+    FAVICON
+    Sekarang pakai emoji 🧁 sebagai favicon.
+    Kalau sudah punya logo PNG, ganti baris ini:
+    <link rel="icon" type="image/png" href="assets/cupiku-logo.png">
+  -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧁</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css\style.css" />
 </head>
-
 <body>
-<!-- NAVBAR -->
-    <header class="navbar">
-        <div class="nav-left">
-            <a href="#">ABOUT US</a>
-            <a href="#">OUR MENU</a>
-            <a href="#">OUR GALLERY</a>
-        </div>
 
-        <div class="nav-right">
-            <button class="order-btn">Order Now</button>
-        </div>
-    </header>
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <header id="navbar">
+    <div class="nav-inner">
 
-<!-- HERO VIDEO SECTION -->
-    <section class="hero">
-        <video autoplay muted loop class="hero-video">
-            <source src="cupiku-video.mp4" type="video/mp4">
-        </video>
+      <a href="#home" class="nav-logo">
+        <!--
+          Kalau sudah punya logo:
+          <img src="assets/cupiku-logo.png" alt="Cupiku" style="width:40px;height:40px;border-radius:50%;object-fit:contain;">
+        -->
+        <div class="nav-logo-icon">C</div>
+        <span>Cupiku</span>
+      </a>
 
-        <div class="hero-overlay">
-            <img src="teks-cupiku.png" alt="Cupiku" class="hero-text">
-        </div>
-    </section>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#order">Order</a></li>
+      </ul>
 
-<!-- OPERATED SECTION -->
-    <section class="operated">
-        <div class="operated-text">
-            OPERATED BY THE OWNER OF CUPIKU THEMSELF
-        </div>
-    </section>
+      <a href="#order" class="nav-cta">Pesan Sekarang ✨</a>
 
-<!-- ABOUT US SECTION -->
-    
-
-<!-- ABOUT PRODUCTS SECTION -->
-    <section class="products">
-        <div class="about-products">
-            <div class="icon">
-                <i class="bi bi-leaf icon"></i>
-                <p>Real ingredients only.<br>No fake flavors</p>
-            </div>
-
-            <div class="icon">
-                <i class="bi bi-cup-hot icon"></i>
-                <p>Pure recipes with<br>a clean taste.</p>
-            </div>
-
-            <div class="icon">
-                <i class="bi bi-heart-fill icon"></i>
-                <p>Made fresh for<br>every order.</p>
-            </div>
-        </div>
-    </section>
-
-<!-- OUR MENU SECTION -->
-    <section class="menu">
-        <h2 class="menu-title">Our Menu</h2>
-        <p class="menu-desc">Unbelievably good, yet light dessert cup!</p>
-
-        <div class="menu-container">
-            <!-- menu SM -->
-            <div class="menu-card">
-                <div class="menu-image">
-                    <img src="strawberry-matcha.jpg" alt="">
-                </div>
-
-                <h3>Strawberry Matcha</h3>
-                <p>Creamy strawberry layers with smooth matcha for a fresh and balanced taste.</p>
-            </div>
-            
-            <!-- menu TM -->
-            <div class="menu-card">
-                <div class="menu-image">
-                    <img src="tiramisu.jpg" alt="">
-                </div>
-
-                <h3>Tiramisu</h3>
-                <p>Soft cake, rich cream, and coffee flavor in every spoon.</p>
-            </div>
-
-            <!-- menu CC -->
-            <div class="menu-card">
-                <div class="menu-image">
-                    <img src="cookies-cream.jpg" alt="">
-                </div>
-
-                <h3>Cookies n Cream</h3>
-                <p>Crunchy cookies mixed with sweeet cream for a classic favorite.</p>
-            </div>
-        </div>
-    </section>
-
-<!-- RUNNING TEXT SECTION -->
-    <div class="running">
-        <div class="running-text">
-            <span>
-            • Your favorite dessert cup in town • Your favorite sweet escape in a cup • Your favorite little treat, anytime • Your favorite dessert, now in a cup • Your favorite comfort dessert to go
-            </span>
-
-            <span>
-            • Your favorite dessert cup in town • Your favorite sweet escape in a cup • Your favorite little treat, anytime • Your favorite dessert, now in a cup • Your favorite comfort dessert to go
-            </span>
-        </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Buka menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
     </div>
 
+    <!-- Mobile menu -->
+    <div class="nav-mobile" id="nav-mobile">
+      <ul>
+        <li><a href="#home"    class="nav-m-link">Home</a></li>
+        <li><a href="#produk"  class="nav-m-link">Produk</a></li>
+        <li><a href="#tentang" class="nav-m-link">Tentang</a></li>
+        <li><a href="#order"   class="nav-m-link">Order</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section id="home">
+    <div class="hero-dots"></div>
+
+    <!-- Blobs dekoratif -->
+    <div class="blob" style="width:280px;height:280px;background:var(--coral);top:-80px;left:-60px;animation:float-slow 7s ease-in-out infinite;"></div>
+    <div class="blob" style="width:360px;height:360px;background:var(--matcha);top:120px;right:-100px;animation:float-slow 8s ease-in-out infinite;animation-delay:1.2s;"></div>
+    <div class="blob" style="width:260px;height:260px;background:var(--lime);bottom:60px;left:35%;animation:float-slow 9s ease-in-out infinite;animation-delay:2s;"></div>
+
+    <!-- Falling sprinkles (diisi JS) -->
+    <div class="sprinkles" id="sprinkles"></div>
+
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- KIRI — Strawberry-chan -->
+        <div class="mascot-wrap mascot-left" style="animation:pop-in .7s cubic-bezier(.34,1.56,.64,1) .4s both;">
+          <div style="position:relative;">
+            <!--
+              Ganti placeholder ini dengan gambar asli:
+              <img src="assets/char-strawberry.png" alt="Strawberry-chan"
+                   style="width:200px;animation:bob 4s ease-in-out infinite;drop-shadow:...">
+            -->
+            <div class="mascot-placeholder">
+              🍓
+              <span class="mascot-label">Strawberry-chan</span>
+            </div>
+            <div class="speech-bubble">hai! 🍓</div>
+            <span class="sparkle-1">✨</span>
+            <span class="sparkle-2">💗</span>
+          </div>
+        </div>
+
+        <!-- TENGAH — copy -->
+        <div class="hero-center">
+          <div class="hero-badge">
+            <span class="dot">✦</span> Fresh &bull; Homemade &bull; Cute
+          </div>
+
+          <h1 class="hero-h1">
+            <span class="word" style="animation-delay:.05s;">Dessert</span>
+            <span class="word text-coral" style="animation-delay:.15s;">Cup</span>
+            <span class="word" style="animation-delay:.25s;">yang</span><br>
+            <span class="word" style="animation-delay:.35s;">bikin</span>
+            <span class="word highlight" style="animation-delay:.45s;">hari</span>
+            <span class="word text-matcha" style="animation-delay:.55s;">manis</span>
+            <span class="word" style="animation-delay:.65s;">✨</span>
+          </h1>
+
+          <p class="hero-sub">
+            Lembut, manisnya pas, kemasan gemes. Dibuat fresh by order, dijamin bikin nagih!
+          </p>
+
+          <div class="hero-btns">
+            <a href="https://wa.me/6285730650658?text=Halo%20Cupiku!%20Aku%20tertarik%20buat%20order%20dessert%20cup%2C%20boleh%20info%20menunya%3F"
+               target="_blank" rel="noreferrer" class="btn-primary">
+              Order via WA
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+            <a href="#produk" class="btn-secondary">Lihat Menu 🍵</a>
+          </div>
+        </div>
+
+        <!-- KANAN — Matcha-kun -->
+        <div class="mascot-wrap mascot-right" style="animation:pop-in .7s cubic-bezier(.34,1.56,.64,1) .7s both;">
+          <div style="position:relative;">
+            <!--
+              Ganti placeholder ini dengan gambar asli:
+              <img src="assets/char-matcha.png" alt="Matcha-kun"
+                   style="width:200px;animation:sway 5s ease-in-out infinite;">
+            -->
+            <div class="mascot-placeholder">
+              🍵
+              <span class="mascot-label">Matcha-kun</span>
+            </div>
+            <span class="sparkle-1" style="animation-delay:.4s;">💚</span>
+            <span class="sparkle-2" style="top:auto;bottom:1.5rem;right:-.75rem;left:auto;animation-delay:1.2s;">⭐</span>
+            <!--
+              Isi .logo-badge dengan logo asli:
+              <img src="assets/cupiku-logo.png" style="width:100%;height:100%;object-fit:contain;border-radius:50%;">
+            -->
+            <div class="logo-badge">C</div>
+          </div>
+        </div>
+
+      </div><!-- /hero-grid -->
+    </div><!-- /container -->
+
+    <!-- Marquee strip (diisi JS) -->
+    <div class="marquee-strip">
+      <div class="marquee-track" id="marquee-track"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PRODUCTS
+       ============================================ -->
+  <section id="produk">
+    <div class="blob" style="width:300px;height:300px;background:var(--matcha);left:-80px;top:120px;opacity:.3;"></div>
+    <div class="blob" style="width:300px;height:300px;background:var(--coral);right:-80px;bottom:60px;opacity:.3;"></div>
+
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">Menu Cupiku</span>
+        <h2 class="section-title">Pilih Dessert <span class="italic">Favoritmu</span></h2>
+        <p class="section-sub">Tiap cup dibuat fresh, kemasan gemes, rasa juara. Klik buat pesan langsung 💚</p>
+      </div>
+
+      <!-- Diisi oleh main.js -->
+      <div class="products-grid" id="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ABOUT
+       ============================================ -->
+  <section id="tentang">
+    <div class="blob" style="width:320px;height:320px;background:var(--lime);left:-80px;top:60px;opacity:.38;"></div>
+
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Kiri: teks -->
+        <div class="about-body reveal">
+          <span class="section-badge">Tentang Kami</span>
+          <h2 class="section-title" style="margin-top:1rem;">
+            Cerita di Balik <span class="italic">Cupiku</span>
+          </h2>
+          <p>
+            Cupiku adalah usaha dessert cup rumahan yang berkomitmen menyajikan
+            manisan lembut dengan tampilan secantik rasanya. Setiap cup dibuat
+            fresh, tanpa pengawet, dan dikemas dengan rapi.
+          </p>
+          <p>
+            Dari sekolah, ke DM Instagram, lalu ke WhatsApp — sekarang kamu
+            bisa pesan langsung lewat website ini. Terima kasih sudah jadi
+            bagian dari perjalanan kami 💚
+          </p>
+        </div>
+
+        <!-- Kanan: story cards + mascot peek -->
+        <div style="position:relative;">
+          <!-- Matcha-kun peek pojok kanan bawah -->
+          <div class="about-mascot-peek">
+            <!--
+              Ganti dengan gambar asli:
+              <img src="assets/char-matcha.png" alt="" aria-hidden="true">
+            -->
+            <div class="about-mascot-placeholder">
+              🍵
+              <span class="mascot-label">Matcha-kun</span>
+            </div>
+          </div>
+
+          <div class="story-cards reveal">
+            <div class="story-card bg-blush" style="animation-delay:0s;">
+              <div class="story-icon">❤️</div>
+              <h3>Mulai dari Hobi</h3>
+              <p>Cupiku lahir dari kecintaan pada dessert manis yang aesthetic.</p>
+            </div>
+            <div class="story-card bg-lime" style="animation-delay:.08s;">
+              <div class="story-icon">🏫</div>
+              <h3>Jualan di Sekolah</h3>
+              <p>Awalnya pre-order kecil-kecilan ke teman sekolah dan terus tumbuh.</p>
+            </div>
+            <div class="story-card bg-butter" style="animation-delay:.16s;">
+              <div class="story-icon">📱</div>
+              <h3>WhatsApp & IG</h3>
+              <p>Pelanggan terus bertambah lewat order via WhatsApp & Instagram.</p>
+            </div>
+            <div class="story-card bg-coral" style="animation-delay:.24s;">
+              <div class="story-icon">🌐</div>
+              <h3>Go Online</h3>
+              <p>Kini Cupiku punya website biar makin gampang buat kamu pesan.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /about-grid -->
+    </div><!-- /container -->
+  </section>
+
+  <!-- ============================================
+       ORDER FORM
+       ============================================ -->
+  <section id="order">
+    <div class="blob" style="width:360px;height:360px;background:var(--coral);right:-100px;bottom:-80px;opacity:.3;"></div>
+    <div class="blob" style="width:280px;height:280px;background:var(--matcha);left:-80px;top:-40px;opacity:.28;"></div>
+
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom:2.5rem;">
+        <span class="section-badge">Order Sekarang</span>
+        <h2 class="section-title">Pesan Lewat <span class="italic">WhatsApp</span></h2>
+        <p class="section-sub" style="margin:0 auto;">
+          Isi form di bawah, klik tombol, dan kami siap melayanimu 💌
+        </p>
+      </div>
+
+      <div class="order-card reveal">
+        <div class="form-group">
+          <label class="form-label" for="name">Nama Kamu</label>
+          <input type="text" id="name" class="form-input"
+                 placeholder="Masukkan nama kamu" autocomplete="off" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="product-select">Pilih Produk</label>
+          <!-- Opsi diisi oleh main.js -->
+          <select id="product-select" class="form-select form-input"></select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Jumlah</label>
+          <div class="qty-row">
+            <button class="qty-btn" id="qty-minus" type="button">−</button>
+            <input type="number" id="qty" class="form-input qty-input" value="1" min="1" />
+            <button class="qty-btn" id="qty-plus"  type="button">+</button>
+          </div>
+        </div>
+
+        <div class="order-total">
+          <span class="order-total-label">Total</span>
+          <span class="order-total-price" id="total-price">Rp 0</span>
+        </div>
+
+        <button class="btn-submit" id="btn-order" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+          Pesan Sekarang via WhatsApp
+        </button>
+
+        <p class="form-note">
+          Kamu akan diarahkan ke WhatsApp dengan pesan otomatis.
+          Pembayaran &amp; detail pengiriman dibahas langsung dengan admin.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <!--
+              Ganti dengan logo asli:
+              <img src="assets/cupiku-logo.png" alt="Cupiku"
+                   style="width:36px;height:36px;border-radius:50%;object-fit:contain;">
+            -->
+            <div class="footer-logo-icon">C</div>
+            <span class="footer-brand-name">Cupiku</span>
+          </div>
+          <p class="footer-tagline">Dessert cup kekinian, bikin hari makin manis 💚</p>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#produk">Produk</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#order">Order</a></li>
+        </ul>
+
+        <div class="footer-socials">
+          <!-- Ganti href Instagram dengan link IG asli -->
+          <a href="https://instagram.com" target="_blank" rel="noreferrer"
+             class="social-btn" title="Instagram">📸</a>
+          <!-- Ganti nomor WA -->
+          <a href="https://wa.me/6285730650658" target="_blank" rel="noreferrer"
+             class="social-btn" title="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <p class="footer-copy">© <span id="year"></span> Cupiku. Made with 💗</p>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div id="toast"></div>
+
+  <!-- Script -->
+  <script src="js\script.js"></script>
 </body>
 </html>
