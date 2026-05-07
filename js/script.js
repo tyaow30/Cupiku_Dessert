@@ -96,18 +96,18 @@ const MARQUEE_ITEMS = [
     card.style.animationDelay = `${i * 0.1}s`;
     card.innerHTML = `
       <span class="product-tag">${p.tag}</span>
-      <div class="product-logo-sticker">C</div>
+      <div class="product-logo-sticker"><img src="assets/main-logo.png" alt="Cupiku" style="width:40px;height:40px;border-radius:50%;object-fit:contain;"></div>
       <div class="product-img-wrap">
         <!--
-          Kalau sudah punya foto produk, ganti blok ini:
+          Kalau sudah punya foto produk, ganti blok ini:-->
           <img src="assets/cup-${p.id}.png" alt="${p.name}"
                style="max-height:100%;object-fit:contain;
                       transition:transform .5s cubic-bezier(.34,1.56,.64,1);">
-        -->
-        <div class="product-img-placeholder">
+        
+        <!-- <div class="product-img-placeholder">
           ${p.emoji}
           <span class="ph-label">${p.name}</span>
-        </div>
+        </div> -->
       </div>
       <div class="product-info">
         <h3 class="product-name">${p.name}</h3>
